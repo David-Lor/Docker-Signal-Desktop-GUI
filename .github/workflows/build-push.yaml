@@ -58,6 +58,9 @@ jobs:
         id: set_image_tag
         run: |-
           echo ::set-output name=TAG::$(echo "davidlor/signal-desktop-gui:${{ steps.get_docker_tag_version_from_file.outputs.content }}")
+      - name: Docker cache
+        uses: satackey/action-docker-layer-caching@v0.0.11
+        continue-on-error: true
       - name: Build
         if: success()
         run: make build IMAGE_TAG=${{ steps.set_image_tag.outputs.TAG }}

@@ -12,7 +12,7 @@ _This image is not official and is not associated with the Signal Foundation._
 
 ```bash
 docker volume create --name=signal-desktop-data
-docker run -d --name=signal-desktop -p 5800:5800 -v signal-desktop-data:/config -v /etc/localtime:/etc/localtime:ro davidlor/signal-desktop:latest
+docker run -d --name=signal-desktop -p 5800:5800 -v signal-desktop-data:/config -v /etc/localtime:/etc/localtime:ro davidlor/signal-desktop-gui:latest
 ```
 
 ## Configuration

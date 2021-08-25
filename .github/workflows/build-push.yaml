@@ -57,7 +57,7 @@ jobs:
         if: success()
         id: set_image_tag
         run: |-
-          echo ::set-output name=TAG::$(echo "davidlor/signal-desktop:${{ steps.get_docker_tag_version_from_file.outputs.content }}")
+          echo ::set-output name=TAG::$(echo "davidlor/signal-desktop-gui:${{ steps.get_docker_tag_version_from_file.outputs.content }}")
       - name: Build
         if: success()
         run: make build IMAGE_TAG=${{ steps.set_image_tag.outputs.TAG }}
